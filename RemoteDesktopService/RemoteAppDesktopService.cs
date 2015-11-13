@@ -19,16 +19,6 @@ namespace RemoteDesktopService
 			Thread = new RegistryMonitor(this, this.ApplicationEventLog);
 		}
 
-		public void OnStart1(string[] args)
-		{
-			var tThread = new Thread(new ThreadStart(Thread.MonitorRegistry))
-			{
-				IsBackground = true
-			};
-
-			tThread.Start();
-		}
-
 		protected override void OnStart(string[] args)
 		{
 			var tThread = new Thread(new ThreadStart(Thread.MonitorRegistry))
