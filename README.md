@@ -16,6 +16,7 @@ Instead, This service simply monitors the key and changes it back whenever Windo
 **The Registry Key**
 
 The registry key that controls the Remote Desktop Icon is the following:
+
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Terminal Server\CentralPublishedResources\PublishedFarms\<collection>\RemoteDesktops\<collection>\ShowInPortal
 
 
