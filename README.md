@@ -18,8 +18,8 @@ Instead, This service simply monitors the key and changes it back whenever Windo
 The registry key that controls the Remote Desktop Icon is the following:
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Terminal Server\CentralPublishedResources\PublishedFarms\<collection>\RemoteDesktops\<collection>\ShowInPortal
 
-**How to use the service**
 
+## How to use the service
 - Install the Service using InstallUtil.exe RemoteDesktopService.exe
 - Create the Registry Key 'ForcePortal' DWORD value 1 in the same location as the ShowInPortal entry for the entry you would like to remain published
 - The service will now ensure ShowInPortal is always set to 1
