@@ -10,12 +10,11 @@ namespace RemoteDesktopService
 	{
 		#region Service Template
 		public RegistryMonitor Thread;
-
 		public RemoteAppDesktopService()
 		{
 			InitializeComponent();
-
 			_GetEventLog();
+
 			Thread = new RegistryMonitor(this, this.ApplicationEventLog);
 		}
 
@@ -38,13 +37,18 @@ namespace RemoteDesktopService
 		#region Service Methods
 		protected void _GetEventLog()
 		{
-			if( !EventLog.SourceExists("DesktopAppMonitor") )
+			try
 			{
-				EventLog.CreateEventSource("RemoteApp Desktop Monitor", "Application");
-			}
+				if( !EventLog.SourceExists("RemoteApp Desktop Monitor") )
+				{
+					EventLog.CreateEventSource("RemoteApp Desktop Monitor", "Application");
+				}
 
-			this.ApplicationEventLog.Source = "RemoteApp Desktop Monitor";
-			this.ApplicationEventLog.Log = "Application";
+				this.ApplicationEventLog.Source = "RemoteApp Desktop Monitor";
+				this.ApplicationEventLog.Log = "Application";
+			}
+			catch( Exception ) {}
+
 		}
 		#endregion Service Methods
 	}

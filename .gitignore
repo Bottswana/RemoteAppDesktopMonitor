@@ -1,1 +1,8 @@
-/.vs/RemoteDesktopService/v14/*.suo
+*.user
+
+bin
+
+obj
+
+.vs
+*.suo
